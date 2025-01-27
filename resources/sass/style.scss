@@ -1,0 +1,17 @@
+@import 'bootstrap/scss/bootstrap';
+
+#welcome h1 {
+    color: red;
+    text-align: center;
+}
+
+
+
+footer {
+    background-color: #343a40;
+    color: #fff;
+    padding: 1rem 0;
+    p {
+        margin: 0;
+    }
+}
