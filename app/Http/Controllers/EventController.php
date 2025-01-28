@@ -3,25 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Events;
 
 class EventController extends Controller
 {
     public function index()
     {
-        return view('welcome');
+        $Events = Events::all();
+        return view('welcome',['events' => $Events]);
     }
 
     public function create()
     {
         return view('events.create');
     }
-    public function products()
-    {
-        return view('products');
-    }
-
-
-    public function contact()
+        public function contact()
     {
         return view('contact');
     }
