@@ -11,7 +11,7 @@
             </form>
         </div>
         <img src="{{ asset('img/eventdev.png') }}" alt="event" class="w-100">
-    <div id="event-container itens-center" class="d-flex">
+    <div id="event-container itens-center" class="d-flex flex-column align-items-center">
         <h2>Próximos eventos</h2>
         <p>Inscrições abertas</p>
         <div id="cards-container" class="row">
