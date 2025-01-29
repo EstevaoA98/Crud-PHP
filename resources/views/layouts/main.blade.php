@@ -1,4 +1,3 @@
-<!-- filepath: /Users/estevaoandrade/Documents/GitHub/Crud-PHP/resources/views/layouts/main.blade.php -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,13 +13,11 @@
         rel="stylesheet">
     <title>@yield('title')</title>
     <link rel="icon" href="{{ asset('img/icon.png') }}">
-    <!-- Boostrap js -->
+    <!-- Bootstrap js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
-
-    <head></head>
     <nav class="navbar navbar-expand-lg bg-body-tertiary rounded" aria-label="Thirteenth navbar example">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample11"
@@ -58,19 +55,16 @@
             </div>
         </div>
     </nav>
-    </head>
-    @yield('content')
 
+    @yield('content')
 
     <footer class="text-center mt-auto py-4">
         <div class="container">
-            <p class="mb-0"> EvntosDev {{ date('Y') }} &copy;
-            </p>
+            <p class="mb-0">EventosDev {{ date('Y') }} &copy;</p>
         </div>
     </footer>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
 </body>
 
 </html>
