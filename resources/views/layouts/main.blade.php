@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <title>@yield('title')</title>
+    <link rel="icon" href="{{ asset('img/icon.png') }}">
     <!-- Boostrap js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
@@ -43,9 +44,11 @@
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
                             aria-expanded="false">Inscreva</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">PHP</a></li>
-                            <li><a class="dropdown-item" href="#">JAVA</a></li>
-                            <li><a class="dropdown-item" href="#">SQL</a></li>
+                            @foreach ($events as $event)
+                                <li>
+                                    <a class="dropdown-item" href="#">{{ $event->title }}</a>
+                                </li>
+                            @endforeach
                         </ul>
                     </li>
                 </ul>
