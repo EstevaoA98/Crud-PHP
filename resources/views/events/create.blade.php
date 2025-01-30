@@ -1,21 +1,34 @@
 @extends('layouts.main')
 
-@section('title','EventoDev - Criar evento')
+@section('title', 'EventoDev - Criar evento')
 
 @section('content')
-
-    <h1>Criar Evento</h1>
-    <form action="/events" method="POST">
-        @csrf
-        <div class="form-group">
-            <label for="title">Título do Evento:</label>
-            <input type="text" class="form-control" id="title" name="title">
-        </div>
-        <div class="form-group">
-            <label for="description">Descrição:</label>
-            <textarea class="form-control" id="description" name="description"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Criar Evento</button>
-    </form>
+    <div id="event-create-container" class="col-md-6 offset-md-3">
+        <h1 class="text-center">Adicionando Evento</h1>
+        <form  id="event-form" action="/events" method="POST">
+            @csrf
+            <div class="form-group m-3">
+                <label for="title">Título do Evento:</label>
+                <input type="text" class="form-control" id="title" name="title" placeholder="Nome do evento...">
+            </div>
+            <div class="form-group m-3">
+                <label for="location">Cidade:</label>
+                <textarea class="form-control" id="location" name="location" placeholder="Local do evento..."></textarea>
+            </div>
+            <div class="form-group m-3">
+                <label for="description">Descrição:</label>
+                <textarea class="form-control" id="description" name="description" placeholder="Descrição do evento..."></textarea>
+            </div>
+            <div class="form-group m-3">
+                <label for="private">Evento é privado:</label>
+                <select class="form-select" id="private" name="private" aria-label="Disabled select example">
+                    <option value="0">Não</option>
+                    <option value="1">Sim</option>
+                </select>
+            </div>
+            <div class="form-group text-center m-3">
+                <button type="submit" class="btn btn-custom" value="Criar evento">Criar Evento</button>
+            </div>
+        </form>
+    </div>
 @endsection
-

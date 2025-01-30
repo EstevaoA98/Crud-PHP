@@ -100,7 +100,7 @@ body{
     margin-bottom: 1rem;
   }
   
-  .card .card-body .btn {
+  .card .card-body .btn, .btn-custom{
     background-color: #6C757D;
     border: none;
   }
@@ -115,7 +115,24 @@ img{
     height: 400px;
 }
 
+/*Create*/
+.btn-custom {
+  background-color: #6C757D;
+  border: none;
+  color: white; 
+  padding: 10px 20px; 
+  text-align: center; 
+  text-decoration: none; 
+  display: inline-block; 
+  font-size: 16px; 
+  margin: 4px 2px; 
+  cursor: pointer; 
+  border-radius: 5px; 
+}
 
+.btn-custom:hover {
+  background-color: #FFC107;
+}
 
 /*footer*/
 footer {
