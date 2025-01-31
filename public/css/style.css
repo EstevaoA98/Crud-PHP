@@ -11,8 +11,6 @@ body {
 }
 
 /*search*/
-
-/*search*/
 #header-container {
     position: relative;
     height: 355px;
@@ -134,6 +132,23 @@ img {
     background-color: #ffc107;
 }
 
+/*Show*/
+.img-events {
+    padding: 30px;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+.event-title{
+    margin-top: 30px;
+}
+.about{
+    margin-left: 250px;
+}
+.event-description{
+    margin-left: 125px;
+    font-size: 20px;
+}
 /*footer*/
 footer {
   background-color: #6c757d;
