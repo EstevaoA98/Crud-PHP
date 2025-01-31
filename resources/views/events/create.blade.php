@@ -20,6 +20,27 @@
                 <textarea class="form-control" id="description" name="description" placeholder="Descrição do evento..."></textarea>
             </div>
             <div class="form-group m-3">
+                <label for="description">Infraestrutura do Evento:</label>
+                    <div class="form-grup">
+                        <input type="checkbox" name="items[]" value="Cadeiras"> Cadeiras
+                    </div>
+                    <div class="form-grup">
+                        <input type="checkbox" name="items[]" value="Cadeiras"> Cadeiras
+                    </div>
+                    <div class="form-grup">
+                        <input type="checkbox" name="items[]" value="Cadeiras"> Cadeiras
+                    </div>
+                    <div class="form-grup">
+                        <input type="checkbox" name="items[]" value="Cadeiras"> Cadeiras
+                    </div>
+                    <div class="form-grup">
+                        <input type="checkbox" name="items[]" value="Cadeiras"> Cadeiras
+                    </div>
+                    <div class="form-grup">
+                        <input type="checkbox" name="items[]" value="Cadeiras"> Cadeiras
+                    </div>
+            </div>
+            <div class="form-group m-3">
                 <label for="private">Evento é privado:</label>
                 <select class="form-select" id="private" name="private" aria-label="Disabled select example">
                     <option value="0">Não</option>

@@ -36,16 +36,13 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/events/create">Criar eventos</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" aria-disabled="true">Eventos</a>
-                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
-                            aria-expanded="false">Inscreva</a>
+                            aria-expanded="false">Eventos abertos</a>
                         <ul class="dropdown-menu">
                             @foreach ($events as $event)
                                 <li>
-                                    <a class="dropdown-item" href="#">{{ $event->title }}</a>
+                                    <a class="dropdown-item" href="">{{ $event->title }}</a>
                                 </li>
                             @endforeach
                         </ul>
