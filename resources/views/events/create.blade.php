@@ -22,22 +22,28 @@
             <div class="form-group m-3">
                 <label for="description">Infraestrutura do Evento:</label>
                     <div class="form-grup">
-                        <input type="checkbox" name="items[]" value="Cadeiras"> Cadeiras
+                        <input type="checkbox" name="items[]" value="Salas para workshops"> Salas para workshops
+                            <p class="infra">Ambientes específicos para hands-on e treinamentos.</p>
                     </div>
                     <div class="form-grup">
-                        <input type="checkbox" name="items[]" value="Cadeiras"> Cadeiras
+                        <input type="checkbox" name="items[]" value="Área de networking"> Área de networking
+                            <p class="infra">Espaço para interação entre participantes, recrutadores e expositores.</p>
                     </div>
                     <div class="form-grup">
-                        <input type="checkbox" name="items[]" value="Cadeiras"> Cadeiras
+                        <input type="checkbox" name="items[]" value="Expositores e stands"> Expositores e stands
+                            <p class="infra">Empresas e startups apresentando produtos e serviços.</p>
                     </div>
                     <div class="form-grup">
-                        <input type="checkbox" name="items[]" value="Cadeiras"> Cadeiras
+                        <input type="checkbox" name="items[]" value="Área de alimentação"> Área de alimentação
+                            <p class="infra">Coffee break, food trucks ou praça de alimentação.</p>
                     </div>
                     <div class="form-grup">
-                        <input type="checkbox" name="items[]" value="Cadeiras"> Cadeiras
+                        <input type="checkbox" name="items[]" value="Wi-Fi de alta velocidade"> Wi-Fi de alta velocidade
+                            <p class="infra">Essencial para uso dos participantes.</p>
                     </div>
                     <div class="form-grup">
-                        <input type="checkbox" name="items[]" value="Cadeiras"> Cadeiras
+                        <input type="checkbox" name="items[]" value="Cronograma bem definido"> Cronograma bem definido
+                            <p class="infra">Agendamento de palestras, workshops e painéis.</p>
                     </div>
             </div>
             <div class="form-group m-3">
