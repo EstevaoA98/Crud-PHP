@@ -152,6 +152,10 @@ img {
     margin-left: 125px;
     font-size: 20px;
 }
+.infra-list, .event{
+    margin-left: -30px;
+    font:bold;
+}
 /*footer*/
 footer {
   background-color: #6c757d;

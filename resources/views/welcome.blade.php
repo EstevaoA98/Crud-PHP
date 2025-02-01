@@ -24,13 +24,17 @@
                     <div class="card col-md-3 mb-4 mx-2">
                         <img src="/img/events/{{$event->image}}" alt="{{ $event->title }}">
                         <div class="card-body">
-                            <p class="card-date">12/02/2025</p>
+                            <p class="card-date">{{date ('d/m/Y', strtotime($event->date))}}</p>
                             <p class="card-title">{{ $event->title }}</p>
                             <p class="card-participants">X participantes</p>
                             <a href="/events/{{$event->id}}" class="btn btn-primary">Saber mais</a>
                         </div>
                     </div>
                 @endforeach
+                 @if (count($events) == 0)
+                    <p>Não foi possível encontrar nenhum evento ainda!</p>
+                     
+                 @endif
             </div>
         </div>
 

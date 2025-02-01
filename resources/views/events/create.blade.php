@@ -16,6 +16,10 @@
                 <textarea class="form-control" id="location" name="location" placeholder="Local do evento..."></textarea>
             </div>
             <div class="form-group m-3">
+                <label for="date">Data:</label>
+                <input type="date" class="form-control" id="date" name="date">
+            </div>
+            <div class="form-group m-3">
                 <label for="description">Descrição:</label>
                 <textarea class="form-control" id="description" name="description" placeholder="Descrição do evento..."></textarea>
             </div>
