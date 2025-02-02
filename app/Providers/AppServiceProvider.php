@@ -4,16 +4,19 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
-use App\Models\Events;
+use App\Models\Event;
+
 
 class AppServiceProvider extends ServiceProvider
 {
     public function boot()
     {
         View::composer('*', function ($view) {
-            $events = Events::all(); 
-            $view->with('events', $events); 
-            // Disponibiliza a variável em todas as views
+            // Se a variável 'events' já estiver definida na view, não sobrescreve
+            if (!isset($view->getData()['events'])) {
+                $events = Event::all();
+                $view->with('events', $events);
+            }
         });
     }
 
