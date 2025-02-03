@@ -22,8 +22,9 @@
                 <h2 class="mt-5">Buscando por: {{ $search }}</h2>
             @else
                 <h2 class="mt-5">Próximos eventos</h2>
+                <p>Inscrições abertas</p>
             @endif
-            <p>Inscrições abertas</p>
+            
             <div id="cards-container" class="row">
                 @foreach ($events as $event)
                     <div class="card col-md-3 mb-4 mx-2">
@@ -36,8 +37,15 @@
                         </div>
                     </div>
                 @endforeach
-                @if (count($events) == 0)
-                    <p>Não foi possível encontrar nenhum evento ainda!</p>
+                @if (count($events) == 0 && $search)
+                    <p>Não foi possível encontrar nenhum evento com o nome {{ $search }}!</p>
+                    <form action="/" >
+                        <button type="submit" class="btn btn-custom p-2 p-lg-1 mb-5">Ver todos Eventos</button>
+                    </form>
+                @elseif(count($events) == 0)
+                    <p>Não há nenhum evento no momento!</p>
+                        <br>
+                        <P>Fique ligado em nossa pagína para nao perdem nenhum evento!!</P>
                 @endif
             </div>
         </div>
