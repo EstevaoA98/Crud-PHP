@@ -47,10 +47,23 @@
                             @endforeach
                         </ul>
                     </li>
+                    @auth
+                        <li class="nav-item">
+                            <a class="nav-link" href="/dashboard">Meus eventos</a>
+                        </li>
+                        <form class="d-flex justify-content-end" action="/logout" method="POST">
+                            @csrf
+                            <button onclick="event.preventDefault();this.closest('form').submit();" class="btn btn-custom p-lg-1">Sair</button> 
+                        </form>
+                    @endauth
                 </ul>
-                <div class="d-lg-flex col-lg-3 justify-content-lg-end">
-                    <button class="btn btn-primary">Login</button>
-                </div>
+                @guest
+                    <div class="d-lg-flex col-lg-3 justify-content-lg-end">
+                        <a href="/register" class="btn btn-custom p-lg-1">Cadastrar</a>
+                        <a href="/login" class="btn btn-custom p-lg-1">Login</a>
+                    </div>
+                @endguest
+
             </div>
         </div>
     </nav>

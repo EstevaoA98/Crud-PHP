@@ -64,4 +64,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function events()
+    {
+        return $this->hasMany('App\Models\Event');
+    }
 }
