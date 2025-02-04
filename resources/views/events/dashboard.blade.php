@@ -1,0 +1,38 @@
+@extends('layouts.main')
+
+@section('title', 'EventoDev - Dashboard')
+
+@section('content')
+
+    <div class="col-md-10 offset-md-1 dashcoard-title-container">
+        <h1>Meus Eventos</h1>
+        <div class="col-md-10 offset-md-1 dashcoard-events-container">
+            @if (count($events)>0)
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Participantes</th>
+                        <th scope="col">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($events as $event)
+                    <tr>
+                        <td scropt="row">{{$loop->index + 1 }}</td>
+                        <td><a href="/events/{{ $event->id }}">{{$event->title}}</a></td>
+                        <td class="">0</td>
+                        <td><a href="#" class="btn btn-custom p-lg-1">Editar</a> <a href="#" class="btn btn-custom p-lg-1">Deletar</a></td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+            @else
+                <p>Voçe ainda não possui um evento</p>
+                <a href="/events/create" class="btn btn-custom">Criar evento</a>
+            @endif
+        </div>
+    </div>
+
+@endsection
