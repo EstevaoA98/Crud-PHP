@@ -15,7 +15,7 @@
             <p class="event-date"><ion-icon name="calendar-outline"></ion-icon>{{date ('d/m/Y', strtotime($event->date))}}</p>
             <p class="event-location"><ion-icon name="location-outline"></ion-icon> {{$event->location}}</p>
             <p class="event-participants"><ion-icon name="people-outline"></ion-icon> participantes</p>
-            <p class="event-owner"><ion-icon name="star-outline"></ion-icon> Criador do evento</p>
+            <p class="event-owner"><ion-icon name="star-outline"></ion-icon> {{$eventOwner['name']}}</p>
             <h3>A Estrutura do evento contará com :</h3>
                 <ul id="items-list">
                     @foreach ($event->items as $item)
