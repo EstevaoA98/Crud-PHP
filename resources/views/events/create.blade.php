@@ -10,26 +10,48 @@
             <div class="form-group m-3">
                 <label for="title">Título do Evento:</label>
                 <input type="text" class="form-control" id="title" name="title" placeholder="Nome do evento...">
-                <p class="alert alert-danger"> <ion-icon name="alert-circle"></ion-icon> {{ $errors->first('title') }}</p>
+                @if ($errors->has('title'))
+                    <p class="alert alert-danger">
+                        <ion-icon name="alert-circle"></ion-icon> {{ $errors->first('title') }}
+                    </p>
+                @endif
             </div>
             <div class="form-group m-3">
                 <label for="location">Cidade:</label>
                 <textarea class="form-control" id="location" name="location" placeholder="Local do evento..."></textarea>
-                <p class="alert alert-danger"> <ion-icon name="alert-circle"></ion-icon> {{ $errors->first('location') }}</p>
+                @if ($errors->has('location'))
+                    <p class="alert alert-danger">
+                        <ion-icon name="alert-circle"></ion-icon> {{ $errors->first('title') }}
+                    </p>
+                @endif
+                </p>
             </div>
             <div class="form-group m-3">
                 <label for="date">Data:</label>
                 <input type="date" class="form-control" id="date" name="date">
-                <p class="alert alert-danger"> <ion-icon name="alert-circle"></ion-icon> {{ $errors->first('date') }}</p>
+                @if ($errors->has('date'))
+                    <p class="alert alert-danger">
+                        <ion-icon name="alert-circle"></ion-icon> {{ $errors->first('title') }}
+                    </p>
+                @endif
             </div>
             <div class="form-group m-3">
                 <label for="description">Descrição:</label>
                 <textarea class="form-control" id="description" name="description" placeholder="Descrição do evento..."></textarea>
-                <p class="alert alert-danger"> <ion-icon name="alert-circle"></ion-icon> {{ $errors->first('description') }}</p>
+                @if ($errors->has('description'))
+                    <p class="alert alert-danger">
+                        <ion-icon name="alert-circle"></ion-icon> {{ $errors->first('title') }}
+                    </p>
+                @endif
+                </p>
             </div>
             <div class="form-group m-3">
                 <label for="description">Infraestrutura do Evento:</label><br>
-                <p class="alert alert-danger"> <ion-icon name="alert-circle"></ion-icon> {{ $errors->first('items') }}</p>
+                @if ($errors->has('items'))
+                    <p class="alert alert-danger">
+                        <ion-icon name="alert-circle"></ion-icon> {{ $errors->first('title') }}
+                    </p>
+                @endif
                 <div class="form-grup">
                     <input type="checkbox" name="items[]" value="Salas para workshops"> Salas para workshops
                     <p class="infra">Ambientes específicos para hands-on e treinamentos.</p>
@@ -65,7 +87,11 @@
             <div class="form-group m-3">
                 <label for="image">Banner do evento:</label>
                 <input type="file" class="form-control" id="image" name="image">
-                <p class="alert alert-danger"> <ion-icon name="alert-circle"></ion-icon> {{ $errors->first('image') }}</p>
+                @if ($errors->has('image'))
+                    <p class="alert alert-danger">
+                        <ion-icon name="alert-circle"></ion-icon> {{ $errors->first('title') }}
+                    </p>
+                @endif
             </div>
             <div class="form-group text-center m-3">
                 <button type="submit" class="btn btn-custom" value="Criar evento">Criar Evento</button>

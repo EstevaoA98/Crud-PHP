@@ -3,7 +3,11 @@
 @section('title', 'EventoDev - Dashboard')
 
 @section('content')
-
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
     <div class="col-md-10 offset-md-1 dashcoard-title-container">
         <h1>Meus Eventos</h1>
         <div class="col-md-10 offset-md-1 dashcoard-events-container">

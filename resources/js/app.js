@@ -1,7 +1,7 @@
 import './bootstrap';
-
+//Criar evento
 document.addEventListener("DOMContentLoaded", function () {
-    const successMessage = document.getElementById("success-message");
+    const successMessage  = document.getElementById("success-message");
 
     if (successMessage) {
         setTimeout(() => {
@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+//Deletar evento
 document.addEventListener("DOMContentLoaded", function () {
     const deleteButtons = document.querySelectorAll(".delete-button");
 
@@ -20,4 +21,13 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
+});
+document.addEventListener("DOMContentLoaded", function () {
+    const deleteMessage = document.getElementById("delete-message");
+
+    if (deleteMessage) {
+        setTimeout(() => {
+            deleteMessage.style.display = "none";
+        }, 3000); 
+    }
 });
