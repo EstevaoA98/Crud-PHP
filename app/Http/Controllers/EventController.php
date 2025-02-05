@@ -27,38 +27,48 @@ class EventController extends Controller
     {
         return view('events.create');
     }
-
     public function store(Request $request)
     {
+        $request->validate([
+            'title' => 'required',
+            'date' => 'required|date',
+            'description' => 'required',
+            'location' => 'required',
+            'image' => 'required', // Adiciona validação para imagem
+            'items' => 'required',
+        ], [
+            'title.required' => 'O título do evento é obrigatório.',
+            'date.required' => 'A data do evento é obrigatória.',
+            'description.required' => 'A descrição do evento é obrigatória.',
+            'location.required' => 'A Localização é obrigatória.',
+            'image.required' => 'É preciso colocar um banner no evento.',
+            'items.required' => 'Pelo menos 1 tipo de infraestrutura tera no evento.',
+        ]);
+    
         $event = new Event();
-
+    
         $event->title = $request->title;
         $event->date = $request->date;
         $event->description = $request->description;
         $event->location = $request->location;
         $event->private = $request->private ?? 0;
         $event->items = $request->items;
-
-        //image upload
+    
+        // Image Upload
         if ($request->hasFile('image') && $request->file('image')->isValid()) {
             $requestImage = $request->image;
-
             $extension = $requestImage->extension();
-
             $imageName = md5($requestImage->getClientOriginalName() . time()) . '.' . $extension;
-
             $requestImage->move(public_path('img/events'), $imageName);
-
             $event->image = $imageName;
         }
-
-        $user = Auth::user(); 
-        $event->user_id = $user->id;
-
+    
+        $event->user_id = Auth::id();
         $event->save();
-
+    
         return redirect('/')->with('success', 'Evento criado com sucesso!');
     }
+    
 
     public function show($id)
     {
@@ -80,5 +90,12 @@ class EventController extends Controller
         $events = $user->events;
 
         return view('events.dashboard', ['events' => $events]);
+    }
+
+    public function destroy($id)
+    {
+        Event::findOrFail($id)->delete();
+
+        return redirect('/dashboard')->with('success', 'Evento deletado com sucesso!');
     }
 }

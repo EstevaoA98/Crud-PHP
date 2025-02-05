@@ -5,6 +5,15 @@
 @section('content')
     <div id="event-create-container" class="col-md-6 offset-md-3">
         <h1 class="text-center">Adicionando Evento</h1>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <form id="event-form" action="/events" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group m-3">
@@ -24,31 +33,32 @@
                 <textarea class="form-control" id="description" name="description" placeholder="Descrição do evento..."></textarea>
             </div>
             <div class="form-group m-3">
-                <label for="description">Infraestrutura do Evento:</label>
-                    <div class="form-grup">
-                        <input type="checkbox" name="items[]" value="Salas para workshops"> Salas para workshops
-                            <p class="infra">Ambientes específicos para hands-on e treinamentos.</p>
-                    </div>
-                    <div class="form-grup">
-                        <input type="checkbox" name="items[]" value="Área de networking"> Área de networking
-                            <p class="infra">Espaço para interação entre participantes, recrutadores e expositores.</p>
-                    </div>
-                    <div class="form-grup">
-                        <input type="checkbox" name="items[]" value="Expositores e stands"> Expositores e stands
-                            <p class="infra">Empresas e startups apresentando produtos e serviços.</p>
-                    </div>
-                    <div class="form-grup">
-                        <input type="checkbox" name="items[]" value="Área de alimentação"> Área de alimentação
-                            <p class="infra">Coffee break, food trucks ou praça de alimentação.</p>
-                    </div>
-                    <div class="form-grup">
-                        <input type="checkbox" name="items[]" value="Wi-Fi de alta velocidade"> Wi-Fi de alta velocidade
-                            <p class="infra">Essencial para uso dos participantes.</p>
-                    </div>
-                    <div class="form-grup">
-                        <input type="checkbox" name="items[]" value="Cronograma bem definido"> Cronograma bem definido
-                            <p class="infra">Agendamento de palestras, workshops e painéis.</p>
-                    </div>
+                <label for="description">Infraestrutura do Evento:</label><br>
+                
+                <div class="form-grup">
+                    <input type="checkbox" name="items[]" value="Salas para workshops"> Salas para workshops
+                    <p class="infra">Ambientes específicos para hands-on e treinamentos.</p>
+                </div>
+                <div class="form-grup">
+                    <input type="checkbox" name="items[]" value="Área de networking"> Área de networking
+                    <p class="infra">Espaço para interação entre participantes, recrutadores e expositores.</p>
+                </div>
+                <div class="form-grup">
+                    <input type="checkbox" name="items[]" value="Expositores e stands"> Expositores e stands
+                    <p class="infra">Empresas e startups apresentando produtos e serviços.</p>
+                </div>
+                <div class="form-grup">
+                    <input type="checkbox" name="items[]" value="Área de alimentação"> Área de alimentação
+                    <p class="infra">Coffee break, food trucks ou praça de alimentação.</p>
+                </div>
+                <div class="form-grup">
+                    <input type="checkbox" name="items[]" value="Wi-Fi de alta velocidade"> Wi-Fi de alta velocidade
+                    <p class="infra">Essencial para uso dos participantes.</p>
+                </div>
+                <div class="form-grup">
+                    <input type="checkbox" name="items[]" value="Cronograma bem definido"> Cronograma bem definido
+                    <p class="infra">Agendamento de palestras, workshops e painéis.</p>
+                </div>
             </div>
             <div class="form-group m-3">
                 <label for="private">Evento é privado:</label>
@@ -59,7 +69,7 @@
             </div>
             <div class="form-group m-3">
                 <label for="image">Banner do evento:</label>
-                <input type="file" class="form-control" id="image" name="image" >
+                <input type="file" class="form-control" id="image" name="image">
             </div>
             <div class="form-group text-center m-3">
                 <button type="submit" class="btn btn-custom" value="Criar evento">Criar Evento</button>
