@@ -9,8 +9,7 @@ use App\Models\User;
 
 class EventController extends Controller
 {
-    public function index()
-    {
+    public function index(){
         $search = request('search');
 
         if ($search) {
@@ -23,12 +22,10 @@ class EventController extends Controller
     }
 
 
-    public function create()
-    {
+    public function create(){
         return view('events.create');
     }
-    public function store(Request $request)
-    {
+    public function store(Request $request){
         $request->validate([
             'title' => 'required',
             'date' => 'required|date',
@@ -70,21 +67,18 @@ class EventController extends Controller
     }
     
 
-    public function show($id)
-    {
+    public function show($id){
         $event = Event::findOrFail($id);
 
         $eventOwner = User::where('id', $event->user_id)->first()->toArray();
 
         return view('events.show', ['event' => $event, 'eventOwner'=>$eventOwner]);
     }
-    public function contact()
-    {
+    public function contact(){
         return view('contact');
     }
 
-    public function dashboard()
-    {
+    public function dashboard() {
         $user = Auth::user();
 
         $events = $user->events;
@@ -92,10 +86,24 @@ class EventController extends Controller
         return view('events.dashboard', ['events' => $events]);
     }
 
-    public function destroy($id)
-    {
+    public function destroy($id){
         Event::findOrFail($id)->delete();
 
         return redirect('/dashboard')->with('success', 'Evento deletado com sucesso!');
     }
+
+    public function edit($id){
+
+        $event = Event::findOrFail($id);
+
+        return view('events.edit', ['event' => $event]);
+    }
+
+    public function update(Request $request, $id) {
+        
+        Event::findOrFail($id)->update($request->all());
+
+        return redirect('/dashboard')->with('success', 'Evento editado com sucesso!');
+    }
+
 }
