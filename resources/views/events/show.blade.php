@@ -18,8 +18,7 @@
             <p class="event-participants">
                 <ion-icon name="people-outline"></ion-icon> 
                 {{ $event->users->count() }} participantes
-            </p>
-                    
+            </p>                    
             <p class="event-owner"><ion-icon name="star-outline"></ion-icon> {{ $eventOwner['name'] }}</p>
             <h3>A Estrutura do evento contará com :</h3>
             <ul id="items-list">

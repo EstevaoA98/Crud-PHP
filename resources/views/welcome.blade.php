@@ -32,7 +32,7 @@
                         <div class="card-body">
                             <p class="card-date">{{ date('d/m/Y', strtotime($event->date)) }}</p>
                             <p class="card-title">{{ $event->title }}</p>
-                            <p class="card-participants">X participantes</p>
+                            <p class="card-participants">{{ $event->users->count() }}  participantes</p>
                             <a href="/events/{{ $event->id }}" class="btn btn-primary">Saber mais</a>
                         </div>
                     </div>
