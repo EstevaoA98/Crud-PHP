@@ -83,19 +83,19 @@ class EventController extends Controller
 
         return view('events.show', ['event' => $event, 'eventOwner' => $eventOwner]);
     }
-    public function contact()
-    {
+    public function contact(){
         return view('contact');
     }
 
-    public function dashboard()
-    {
+    public function dashboard(){
         $user = Auth::user();
-
+    
         $events = $user->events;
-
-        return view('events.dashboard', ['events' => $events]);
+        $eventsAsParticipant = $user->eventsAsParticipant; 
+    
+        return view('events.dashboard', ['events' => $events, 'eventsAsParticipant' => $eventsAsParticipant ]);
     }
+    
 
     public function destroy($id)
     {
@@ -106,10 +106,16 @@ class EventController extends Controller
 
     public function edit($id)
     {
+        $user = Auth::user();
 
         $event = Event::findOrFail($id);
 
+        if ($user->id != $event->user_id) {
+            return redirect('/dashboard')->with('error', 'Você não tem permissão para editar esse evento.');
+        }
+
         return view('events.edit', ['event' => $event]);
+
     }
 
     public function update(Request $request, $id)
@@ -155,4 +161,14 @@ class EventController extends Controller
         return redirect('/dashboard')->with('success', 'Sua presença foi confirmada no evento ' . $event->title);
     }
     
+    public function leaveEvent($id){
+
+        $user = Auth::user();
+    
+        $user->eventsAsParticipant()->detach($id);
+
+        $event = Event::findOrFail($id);
+
+        return redirect('/dashboard')->with('info', 'Sua presença foi removida do evento ' . $event->title);
+    }
 }
