@@ -2,26 +2,44 @@
     font-family: "Roboto";
 }
 
+/*Navbar*/
+.navbar {
+    background-color: #6c757d32 !important;
+}
+.nav-link {
+    background-color:transparent;
+    color: black; 
+    transition: color 0.3s ease-in-out; 
+}
+
+.nav-link:hover {
+    color: #ffc107; 
+}
+
+.icon-navbar img {
+    width: 55px;
+    height: 45px;
+    transition: transform 0.3s ease-in-out; /* Suaviza a transição */
+}
+
+.icon-navbar img:hover {
+    transform: scale(1.8); /* Aumenta levemente o ícone no hover */
+}
+
+
 /*Main*/
 body {
     min-height: 100vh;
     padding-bottom: 100px;
     position: relative;
-    /*background-color:#007BFF;*/
 }
 
 /*search*/
 #header-container {
     position: relative;
-    height: 355px;
+    height: 145px;
 }
 
-#search-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
 
 #search {
     padding: 10px;

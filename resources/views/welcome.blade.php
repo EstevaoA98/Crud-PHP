@@ -16,7 +16,7 @@
                 <button type="submit" class="btn btn-custom p-2">Pesquisar</button>
             </form>
         </div>
-        <img src="{{ asset('img/eventdev.png') }}" alt="event" class="w-100">
+        <img src="{{ asset('img/image.png') }}" alt="event" class="w-100">
         <div id="event-container itens-center" class="d-flex flex-column align-items-center">
             @if ($search)
                 <h2 class="mt-5">Buscando por: {{ $search }}</h2>

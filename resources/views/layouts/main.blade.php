@@ -12,7 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <title>@yield('title')</title>
-    <link rel="icon" href="{{ asset('img/icon.png') }}">
+    <link rel="icon" href="{{ asset('img/favicon.ico') }}" sizes="65x65">
+
     <!-- Bootstrap js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
@@ -28,10 +29,10 @@
             </button>
 
             <div class="collapse navbar-collapse d-lg-flex" id="navbarsExample11">
-                <a class="navbar-brand col-lg-3 me-0" href="/">Eventos Dev</a>
+                <a class="icon-navbar navbar-brand col-lg-3 me-0" href="/"><img src="{{ asset('img/icon-dv.png') }}" alt="icon"></a>
                 <ul class="navbar-nav col-lg-6 justify-content-lg-center">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                        <a class="nav-link" aria-current="page" href="/">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/events/create">Criar eventos</a>
