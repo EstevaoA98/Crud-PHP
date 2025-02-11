@@ -42,7 +42,7 @@
                         <ul class="dropdown-menu">
                             @foreach ($events as $event)
                                 <li>
-                                    <a class="dropdown-item" href="">{{ $event->title }}</a>
+                                    <a class="dropdown-item" href="/events/{{ $event->id }}">{{ $event->title }}</a>
                                 </li>
                             @endforeach
                         </ul>

@@ -4,9 +4,11 @@
 
 @section('content')
     @if (session('success'))
-        <div id="delete-message" class="alert alert-success text-center">
-            {{ session('success') }}
-        </div>
+        <div class="alert alert-success">{{ session('success') }}</div>
+    @elseif (session('error'))
+        <div class="alert alert-danger">{{ session('error') }}</div>
+    @elseif (session('info'))
+        <div class="alert alert-info">{{ session('info') }}</div>
     @endif
     <div class="col-md-10 offset-md-1 dashcoard-title-container">
         <h1>Meus Eventos</h1>

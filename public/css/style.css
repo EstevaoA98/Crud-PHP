@@ -157,6 +157,24 @@ img {
     margin-left: -30px;
     font:bold;
 }
+
+/*Alert*/
+.alert-warning{
+    max-width: 400px;
+    text-align: center; 
+}
+
+.alert.alert-success, 
+.alert.alert-danger, 
+.alert.alert-warning, 
+.alert.alert-info {
+    max-width: 400px;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+    margin: 0 auto; 
+}
 /*footer*/
 footer {
   background-color: #6c757d;

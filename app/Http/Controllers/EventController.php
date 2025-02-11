@@ -79,9 +79,15 @@ class EventController extends Controller
     {
         $event = Event::findOrFail($id);
 
+        $user = Auth::user();
+
+        $hasUserJoined=false;
+
+        $hasUserJoined = $user && $user->eventsAsParticipant->contains('id', $id);
+
         $eventOwner = User::where('id', $event->user_id)->first()->toArray();
 
-        return view('events.show', ['event' => $event, 'eventOwner' => $eventOwner]);
+        return view('events.show', ['event' => $event, 'eventOwner' => $eventOwner, 'hasUserJoined' => $hasUserJoined]);
     }
     public function contact(){
         return view('contact');

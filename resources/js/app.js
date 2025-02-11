@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (successMessage) {
         setTimeout(() => {
             successMessage.style.display = "none";
-        }, 3000); 
+        }, 4000); 
     }
 });
 
@@ -28,6 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if (deleteMessage) {
         setTimeout(() => {
             deleteMessage.style.display = "none";
-        }, 3000); 
+        }, 4000); 
     }
 });
