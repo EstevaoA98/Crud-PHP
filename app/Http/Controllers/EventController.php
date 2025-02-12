@@ -89,9 +89,6 @@ class EventController extends Controller
 
         return view('events.show', ['event' => $event, 'eventOwner' => $eventOwner, 'hasUserJoined' => $hasUserJoined]);
     }
-    public function contact(){
-        return view('contact');
-    }
 
     public function dashboard(){
         $user = Auth::user();
