@@ -23,6 +23,17 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 document.addEventListener("DOMContentLoaded", function () {
+    const deleteButtons = document.querySelectorAll(".exit-button");
+
+    deleteButtons.forEach(button => {
+        button.addEventListener("click", function (event) {
+            if (!confirm("Tem certeza que deseja descamar sua presença neste evento?")) {
+                event.preventDefault();
+            }
+        });
+    });
+});
+document.addEventListener("DOMContentLoaded", function () {
     const deleteMessage = document.getElementById("delete-message");
 
     if (deleteMessage) {

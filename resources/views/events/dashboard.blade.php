@@ -79,7 +79,7 @@
                                 <form action="/events/leave/{{ $event->id }}" method="POST" class="d-inline-block">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="delete-button btn btn-custom p-lg-1">
+                                    <button type="submit" class="exit-button btn btn-custom p-lg-1">
                                         <ion-icon name="exit-outline"></ion-icon> Sair do evento
                                     </button>
                                 </form>
