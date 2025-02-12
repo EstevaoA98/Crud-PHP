@@ -12,7 +12,7 @@
     @endif
     <div class="col-md-10 offset-md-1 dashcoard-title-container">
         <h1>Meus Eventos</h1>
-        <div class="col-md-8 offset-md-2 dashcoard-events-container">
+        <div class="table table-striped table-hover">
             @if (count($events) > 0)
                 <table class="table table-striped table-hover">
                     <thead>
@@ -27,11 +27,11 @@
                     <tbody>
                         @foreach ($events as $event)
                             <tr>
-                                <td scropt="row">{{ $loop->index + 1 }}</td>
+                                <td scope="row">{{ $loop->index + 1 }}</td>
                                 <td><a href="/events/{{ $event->id }}">{{ $event->title }}</a></td>
                                 <td class="">{{ count($event->users) }}</td>
                                 <td>{{ date('d/m/Y', strtotime($event->date)) }}</td>
-                                <td>
+                                <td class="d-flex gap-2">
                                     <a href="/events/edit/{{ $event->id }}" class="btn btn-custom p-lg-1 d-inline-block">
                                         <ion-icon name="create-outline"></ion-icon> Editar
                                     </a>
@@ -56,7 +56,7 @@
     <div class="col-md-10 offset-md-1 dashcoard-title-container">
         <h1>Eventos inscritos</h1>
     </div>
-    <div class="col-md-8 offset-md-2 dashcoard-events-container">
+    <div class="col-md-10 offset-md-1 dashcoard-title-container">
         @if (count($eventsAsParticipant) > 0)
             <table class="table table-striped table-hover">
                 <thead>
@@ -71,7 +71,7 @@
                 <tbody>
                     @foreach ($eventsAsParticipant as $event)
                         <tr>
-                            <td scropt="row">{{ $loop->index + 1 }}</td>
+                            <td scope="row">{{ $loop->index + 1 }}</td>
                             <td><a href="/events/{{ $event->id }}">{{ $event->title }}</a></td>
                             <td class="">{{ count($event->users) }}</td>
                             <td>{{ date('d/m/Y', strtotime($event->date)) }}</td>
