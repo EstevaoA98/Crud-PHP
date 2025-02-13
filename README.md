@@ -48,28 +48,58 @@ Este projeto é um sistema web para gerenciamento de eventos, desenvolvido com L
     ```
 
 ## Funcionalidades
-
+![Home](/fotosProjeto/home.png)
 ### 1. Integração com Banco de Dados
    - Conecte-se ao banco de dados MySQL/phpmyadmin configurando o arquivo `.env` com suas credenciais.
    - Execute `php artisan migrate` para criar as tabelas necessárias.
+   ![Banco de dados](/fotosProjeto/bdo.png)
 
-### 2. Login
+### 2. Login/Cadastro
    - O sistema utiliza autenticação do Laravel. Os usuários podem se registrar e fazer login para acessar a dashboard.
+    ![Cadastro](/fotosProjeto/cadastro.png)
+    ![Login](/fotosProjeto/login.png)
 
 ### 3. Criação de Evento
    - Os usuários autenticados podem criar eventos preenchendo um formulário com detalhes do evento, como nome, descrição, data e local.
+    ![Pag criação de evento](/fotosProjeto/criaca.png)
+    ![Sucesso na criação de evento](/fotosProjeto/criasuu.png)
+    ![Preencher os campos na criação de evento](/fotosProjeto/errocria.png)
 
 ### 4. Edição de Evento
    - Os eventos existentes podem ser editados pelos criadores para atualizar informações.
+    ![Página de edição de evento](/fotosProjeto/editevent.png)
 
-### 5. Marcar Presença no Evento
+### 5. Excluir  Evento
+   - Os eventos existentes podem ser excluidos pelos criadores que o criou.
+    ![Deletar evento](/fotosProjeto/deletevent.png)
+
+### 6. Marcar Presença no Evento
    - Os usuários podem marcar presença em eventos e visualizar a lista de eventos nos quais marcaram presença.
+    ![Marca presença no evento](/fotosProjeto/pre_confirmada.png)
 
-### 6. Desmarcar Presença no Evento
+### 7. Desmarcar Presença no Evento
    - Os usuários podem desmarcar presença em eventos, removendo-se da lista de participantes.
+    ![Desmarcando presença no evento](/fotosProjeto/pre_remo.png)
+    ![Desmarcando presença no evento](/fotosProjeto/rem_presenca.png)
 
-### 7. Visualizar Contagem de Participantes
+### 8. Desmarcar Presença no Evento
+   - Os usuários podem ver a presença na paginas dos eventos, informando-o que já está participando.
+    ![Já está confirmando no evento](/fotosProjeto/participoando.png)
+    
+
+### 9. Visualizar Contagem de Participantes
    - A dashboard exibe o número de pessoas que confirmaram presença em cada evento.
+    ![Na informação do evento da para ver quantos participantes terá](/fotosProjeto/con_presença.png)
+
+### 10. Busca de eventos
+   - A dashboard exibe o lugar a onde o usuário consegue buscar os eventos cadastrados por outros usuários.
+    ![Buscando evento por nome](/fotosProjeto/busca1.png)
+    ![Buscando evento por nome](/fotosProjeto/busca1.png)
+
+
+### 11. Lista os eventos ativos na navbar
+   - Na Navbar exibe os eventos cadastrados por outros usuários.
+    ![Eventos que estão disponiveis direto na navbar](/fotosProjeto/listaevent.png)
 
 ## Como Executar
 
